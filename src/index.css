@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[#0A0A0A] text-white overflow-x-hidden;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-1;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-[#0A0A0A];
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#9A7A4A] rounded;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply relative overflow-hidden bg-[#C9A96E] text-[#0A0A0A] px-8 py-3 font-medium text-sm uppercase tracking-widest transition-all duration-300 hover:bg-[#B89855];
+  }
+
+  .gold-divider {
+    @apply h-px bg-gradient-to-r from-transparent via-[#C9A96E] to-transparent;
+  }
+
+  .nav-link {
+    @apply text-xs tracking-widest uppercase text-[rgba(240,237,232,0.6)] hover:text-[#C9A96E] transition-colors relative pb-1;
+  }
+
+  .nav-link::after {
+    @apply absolute bottom-0 left-0 w-0 h-px bg-[#C9A96E] transition-all duration-300;
+    content: '';
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    @apply font-serif;
+  }
+
+  .text-gold {
+    @apply text-[#C9A96E];
+  }
+
+  .border-gold {
+    @apply border-[#C9A96E];
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes spotlight-flicker {
+  0%,
+  95%,
+  100% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 0.85;
+  }
+  97% {
+    opacity: 1;
+  }
+}
+
